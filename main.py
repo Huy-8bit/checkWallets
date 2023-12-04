@@ -27,7 +27,7 @@ while True:
     print(f"Số dư của địa chỉ {address} là: {balance} Wei")
 
     # Lưu vào file nếu số dư lớn hơn 0
-    if balance > 0:
+    if balance >= 0:
         with open("data.txt", "a") as file:
             file.write(
                 f"Address: {address}, Balance: {balance} Wei, Private Key: {private_key.hex()}\n"
