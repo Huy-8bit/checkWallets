@@ -54,12 +54,7 @@ while True:
 
     # Lấy số dư và chuyển đổi sang Wei
     balance = web3eth.eth.get_balance(address)
-    print("Private key: ", private_key.hex())
-    print(f"Số dư của địa chỉ {address} ở eth là: {balance} Wei")
-
     balance2 = web3bsc.eth.get_balance(address)
-    print(f"Số dư của địa chỉ {address} ở bnb là: {balance2} Wei")
-    print("--------------------------------------------------")
 
     # Gửi email nếu số dư lớn hơn 0
     if balance > 0 or balance2 > 0:
