@@ -30,6 +30,8 @@ web3eth = Web3(Web3.HTTPProvider(public_rpc_url_eth))
 public_rpc_url_bsc = "https://koge-rpc-bsc.48.club"
 web3bsc = Web3(Web3.HTTPProvider(public_rpc_url_bsc))
 
+count = 0
+
 # Kiểm tra kết nối thành công
 if web3eth.is_connected():
     print("Connected to Ethereum network")
@@ -42,7 +44,9 @@ elif web3bsc.is_connected():
 else:
     print("Failed to connect to Ethereum network")
     exit(1)
+
 while True:
+    print(count)
     # Tạo private key ngẫu nhiên
     account = w3.eth.account.create()
 
@@ -72,3 +76,6 @@ while True:
             file.write(
                 f"Address: {address}, Balance: {balance} Wei, Private Key: {private_key.hex()}\n"
             )
+
+    count += 1
+    os.system("clear")
